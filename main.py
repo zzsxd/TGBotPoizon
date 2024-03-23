@@ -24,22 +24,32 @@ def main():
 
     @bot.message_handler(content_types=['text'])
     def text(message):
+        buttons = Bot_inline_btns()
         user_id = message.chat.id
         code = temp_user_data.temp_data(user_id)[user_id][0]
         if code == 0:
             rub = int(message.text)
-            result = rub * 13.5 + rub / 100 * 20 + 400
+            result = rub + 20 / 100 * rub + 400
             bot.send_message(message.chat.id, f'Цена товара: {result}₽')
         elif code == 1:
             rub = int(message.text)
-            result = rub * 13.5 + rub / 100 * 20 + 300
+            result = rub + 20 / 100 * rub + 300
             bot.send_message(message.chat.id, f'Цена товара: {result}₽')
         elif code == 2:
             rub = int(message.text)
-            result = rub * 13.5 + rub / 100 * 20 + 200
+            result = rub + 20 / 100 * rub + 200
             bot.send_message(message.chat.id, f'Цена товара: {result}₽')
         elif code == 3:
             bot.send_message(message.chat.id, 'Поздравляем! Вы получаете скидку 200₽ на любой заказ!')
+            bot.send_message(message.chat.id,
+                             'Привет, дорогой покупатель! Мы 95Shop предоставляем услугу заказов товаров '
+                             'с китайских маркетплейсов 🧯\n'
+                             '• Низкие комиссии\n'
+                             '• Частые скидки\n'
+                             '• Доставка 5-10 дней\n', reply_markup=buttons.start_btns())
+        elif message.text == '':
+            pass
+
 
     @bot.callback_query_handler(func=lambda call: True)
     def callback(call):
@@ -66,24 +76,48 @@ def main():
                              reply_markup=buttons.test_questone_btns())
         elif call.data == 'not_true1' or call.data == 'not_true2' or call.data == 'not_true3':
             bot.send_message(call.message.chat.id, 'Ответ не верный!')
+            bot.send_message(call.message.chat.id,
+                             'Привет, дорогой покупатель! Мы 95Shop предоставляем услугу заказов товаров '
+                             'с китайских маркетплейсов 🧯\n'
+                             '• Низкие комиссии\n'
+                             '• Частые скидки\n'
+                             '• Доставка 5-10 дней\n', reply_markup=buttons.start_btns())
         elif call.data == 'true1':
             bot.send_message(call.message.chat.id, 'Правильно! 1/5')
             bot.send_message(call.message.chat.id, '2. Как зовут основателя бренда Adidas?',
                              reply_markup=buttons.test_questsecond_btns())
         elif call.data == 'not_true4' or call.data == 'not_true5' or call.data == 'not_true6':
             bot.send_message(call.message.chat.id, 'Ответ не верный!')
+            bot.send_message(call.message.chat.id,
+                             'Привет, дорогой покупатель! Мы 95Shop предоставляем услугу заказов товаров '
+                             'с китайских маркетплейсов 🧯\n'
+                             '• Низкие комиссии\n'
+                             '• Частые скидки\n'
+                             '• Доставка 5-10 дней\n', reply_markup=buttons.start_btns())
         elif call.data == 'true2':
             bot.send_message(call.message.chat.id, 'Правильно! 2/5')
             bot.send_message(call.message.chat.id, '3. Самая популярная модель кроссовок Adidas?',
                              reply_markup=buttons.test_questthird_btns())
         elif call.data == 'not_true7' or call.data == 'not_true8' or call.data == 'not_true9':
             bot.send_message(call.message.chat.id, 'Ответ не верный!')
+            bot.send_message(call.message.chat.id,
+                             'Привет, дорогой покупатель! Мы 95Shop предоставляем услугу заказов товаров '
+                             'с китайских маркетплейсов 🧯\n'
+                             '• Низкие комиссии\n'
+                             '• Частые скидки\n'
+                             '• Доставка 5-10 дней\n', reply_markup=buttons.start_btns())
         elif call.data == 'true3':
             bot.send_message(call.message.chat.id, 'Правильно! 3/5')
             bot.send_message(call.message.chat.id, '4. Кто основатель бренда Rick Owens?',
                              reply_markup=buttons.test_questfour_btns())
         elif call.data == 'not_true10' or call.data == 'not_true11' or call.data == 'not_true12':
             bot.send_message(call.message.chat.id, 'Ответ не верный!')
+            bot.send_message(call.message.chat.id,
+                             'Привет, дорогой покупатель! Мы 95Shop предоставляем услугу заказов товаров '
+                             'с китайских маркетплейсов 🧯\n'
+                             '• Низкие комиссии\n'
+                             '• Частые скидки\n'
+                             '• Доставка 5-10 дней\n', reply_markup=buttons.start_btns())
         elif call.data == 'true4':
             bot.send_message(call.message.chat.id, 'Правильно! 4/5')
             bot.send_message(call.message.chat.id, '5. Ваши любимые кроссовки?')
