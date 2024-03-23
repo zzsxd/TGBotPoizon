@@ -54,22 +54,22 @@ def main():
             bot.send_message(message.chat.id, 'Поздравляем! Вы получаете скидку 200₽ на любой заказ!')
             temp_user_data.temp_data(user_id)[user_id][0] = 4
         elif code == 4:
-            if message.text == 'Заказать с Poizon':
+            if message.text == 'Заказать с Poizon🧯':
                 bot.send_message(message.chat.id, 'Для заказа товара с пойзон напишите модератору @virtosvskiwork')
-            elif message.text == 'Рассчитать стоимость':
+            elif message.text == 'Рассчитать стоимость💸':
                 bot.send_message(message.chat.id, 'Выберите тип товара', reply_markup=buttons.cost_btns())
-            elif message.text == 'Скидки':
+            elif message.text == 'Скидки💯':
                 bot.send_message(message.chat.id, 'Проверьте свои знания брендов и получите небольшой бонус!')
                 bot.send_message(message.chat.id, '1. В каком году был основан бренд Nike?',
                                  reply_markup=buttons.test_questone_btns())
-            elif message.text == 'Заказать с TaoBao/1688':
+            elif message.text == 'Заказать с TaoBao/1688🇨🇳':
                 bot.send_message(message.chat.id,
                                  'Для заказа товара с таобао/1688 напишите модератору @virtosvskiwork\n'
                                  'Внимательно проверяйте отзывы продавца на китайском марктеплейсе!\n'
                                  'Сроки могут увеличиться на пару дней')
-            elif message.text == 'Помощь':
+            elif message.text == 'Помощь❓':
                 bot.send_message(message.chat.id, 'Если вы хотите задать вопрос -> @virtosvskiwork')
-            elif message.text == 'Отзывы':
+            elif message.text == 'Отзывы📝':
                 bot.send_message(message.chat.id, 'Отзывы о заказах вы можете прочитать в нашем канале\n'
                                                        'https://t.me/s95hop')
 

@@ -15,12 +15,12 @@ class Bot_inline_btns:
 
     def start_btns(self):
         keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
-        poizon = types.KeyboardButton('Заказать с Poizon')
-        cost = types.KeyboardButton('Рассчитать стоимость')
-        discount = types.KeyboardButton('Скидки')
-        taobao = types.KeyboardButton('Заказать с TaoBao/1688')
-        support = types.KeyboardButton('Помощь')
-        reviews = types.KeyboardButton('Отзывы')
+        poizon = types.KeyboardButton('Заказать с Poizon🧯')
+        cost = types.KeyboardButton('Рассчитать стоимость💸')
+        discount = types.KeyboardButton('Скидки💯')
+        taobao = types.KeyboardButton('Заказать с TaoBao/1688🇨🇳')
+        support = types.KeyboardButton('Помощь❓')
+        reviews = types.KeyboardButton('Отзывы📝')
         keyboard.add(poizon, cost, discount, taobao, support, reviews)
         return keyboard
 
