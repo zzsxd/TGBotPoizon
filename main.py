@@ -30,18 +30,24 @@ def main():
         code = temp_user_data.temp_data(user_id)[user_id][0]
         buttons = Bot_inline_btns()
         if code == 0:
-            rub = int(message.text)
-            result = rub * 13.5 + 400
+            yan = int(message.text)
+            rub = yan * 13.5
+            commission = 20 / 100 * rub
+            result = rub + commission + 400
             bot.send_message(message.chat.id, f'Цена товара: {result}₽')
             temp_user_data.temp_data(user_id)[user_id][0] = 4
         elif code == 1:
-            rub = int(message.text)
-            result = rub * 13.5 + 300
+            yan = int(message.text)
+            rub = yan * 13.5
+            commission = 20 / 100 * rub
+            result = rub + commission + 300
             bot.send_message(message.chat.id, f'Цена товара: {result}₽')
             temp_user_data.temp_data(user_id)[user_id][0] = 4
         elif code == 2:
-            rub = int(message.text)
-            result = rub * 13.5 + 200
+            yan = int(message.text)
+            rub = yan * 13.5
+            commission = 20 / 100 * rub
+            result = rub + commission + 200
             bot.send_message(message.chat.id, f'Цена товара: {result}₽')
             temp_user_data.temp_data(user_id)[user_id][0] = 4
         elif code == 3:
